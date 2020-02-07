@@ -1,0 +1,4 @@
+﻿  InitBadem.cpp
+C:\Users\atakb\OneDrive\Desktop\Badem_Mnıst_Interface\BademV1\InitBadem.h(280): warning C4700: uninitialized local variable 'row' used
+  InitBadem.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  BademV1.vcxproj -> C:\Users\atakb\OneDrive\Desktop\Badem_Mnıst_Interface\Debug\BademV1.exe
