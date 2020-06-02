@@ -286,6 +286,7 @@ namespace BademV1 {
 				{
 					for (int y = 0; y < 10; y++)
 					{
+						if ((y + i) > 280 || (x + j) > 280)continue;
 						min += image[(i + x) * 280 + j + y];
 					}
 				}
@@ -319,17 +320,17 @@ namespace BademV1 {
 		this->pictureBox2->Image = drem;
 	}
 	private: System::Void button_Predict_Click(System::Object^ sender, System::EventArgs^ e) {
-		//std::string image = "D://TASARIM//BademV1.0//MnýstValidBýas//9.txt";
-		std::string kernel1 = "D://TASARIM//Badem_Mnýst_Interface//MnýstValidBýas//CNN0.txt";
-		std::string kernel2 = "D://TASARIM//Badem_Mnýst_Interface//MnýstValidBýas//CNN1.txt";
-		std::string weight1 = "D://TASARIM//Badem_Mnýst_Interface//MnýstValidBýas//FCN0.txt";
-		std::string weight2 = "D://TASARIM//Badem_Mnýst_Interface//MnýstValidBýas//FCN1.txt";
+		//std::string image = "D://TASARIM//BademV1.0//MnÄ±stValidBÄ±as//9.txt";
+		std::string kernel1 = "D://TASARIM//Badem_MnÄ±st_Interface//MnÄ±stValidBÄ±as//CNN0.txt";
+		std::string kernel2 = "D://TASARIM//Badem_MnÄ±st_Interface//MnÄ±stValidBÄ±as//CNN1.txt";
+		std::string weight1 = "D://TASARIM//Badem_MnÄ±st_Interface//MnÄ±stValidBÄ±as//FCN0.txt";
+		std::string weight2 = "D://TASARIM//Badem_MnÄ±st_Interface//MnÄ±stValidBÄ±as//FCN1.txt";
 
 		Model m;
 
 		m.setImage(img);
 		//m.ReadImageFile(image);
-		m.Conv2D(kernel1, "relu", "valid", "true", 1); //Filter - Activation - Padding - Bias - Stride.
+		m.Conv2D(kernel1, "relu", "valid", "true", 1);
 		m.Conv2D(kernel2, "relu", "valid", "true", 1);
 		m.MaxPooling2D(2);
 		m.Flatten();
@@ -340,11 +341,11 @@ namespace BademV1 {
 		labelPredict->Text = m.getPredict().ToString();
 
 		////Cifar10
-		//std::string image   = "C://Users//poyra//Desktop//Tasarým//TasarimBadem//BademV1.0//Cifar//1.txt";
-		//std::string kernel1 = "C://Users//poyra//Desktop//Tasarým//TasarimBadem//BademV1.0//Cifar//CNN0.txt";
-		//std::string kernel2 = "C://Users//poyra//Desktop//Tasarým//TasarimBadem//BademV1.0//Cifar//CNN1.txt";
-		//std::string weight1 = "C://Users//poyra//Desktop//Tasarým//TasarimBadem//BademV1.0//Cifar//FCN0.txt";
-		//std::string weight2 = "C://Users//poyra//Desktop//Tasarým//TasarimBadem//BademV1.0//Cifar//FCN1.txt";
+		//std::string image   = "C://Users//poyra//Desktop//TasarÄ±m//TasarimBadem//BademV1.0//Cifar//1.txt";
+		//std::string kernel1 = "C://Users//poyra//Desktop//TasarÄ±m//TasarimBadem//BademV1.0//Cifar//CNN0.txt";
+		//std::string kernel2 = "C://Users//poyra//Desktop//TasarÄ±m//TasarimBadem//BademV1.0//Cifar//CNN1.txt";
+		//std::string weight1 = "C://Users//poyra//Desktop//TasarÄ±m//TasarimBadem//BademV1.0//Cifar//FCN0.txt";
+		//std::string weight2 = "C://Users//poyra//Desktop//TasarÄ±m//TasarimBadem//BademV1.0//Cifar//FCN1.txt";
 
 		//Model m;
 		//m.ReadImageFile(image);
